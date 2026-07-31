@@ -1,19 +1,55 @@
 
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget{
+class CustomTextField extends StatefulWidget{
   final String text;
   final bool obscureText;
   final bool numberKeyboard;
-  const CustomTextField({super.key, required this.text, required this.obscureText, required this.numberKeyboard});
+  final Icon? prefixIcon;
+
+  const CustomTextField({
+    super.key,
+    required this.text, 
+    required this.obscureText, 
+    required this.numberKeyboard, 
+    this.prefixIcon,
+    });
+
+  @override
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  late bool obscured;
+  
+  @override
+  void initState(){
+    super.initState();
+    obscured = widget.obscureText;
+  }
+
   @override
   Widget build(BuildContext context){
     return TextFormField(
-      obscureText: obscureText,
-      keyboardType: numberKeyboard ? TextInputType.phone : TextInputType.text,
+      obscureText: obscured,
+      keyboardType: widget.numberKeyboard ? TextInputType.phone : TextInputType.text,
       decoration: InputDecoration(
+        prefixIcon: widget.prefixIcon,
+        suffixIcon: widget.obscureText ? IconButton(
+          onPressed: (){
+            setState(() {
+              obscured = !obscured;
+            });
+          }, 
+          icon: Icon(obscured
+                ? Icons.visibility_off_outlined
+                : Icons.visibility_outlined
+          )
+          ) :
+          null,
+        
              contentPadding: EdgeInsets.all(10),
-          hintText: text,
+          hintText: widget.text,
           filled: true,
           fillColor: const Color.fromARGB(115, 243, 242, 242),
           enabledBorder: OutlineInputBorder(
