@@ -166,7 +166,6 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         SizedBox(height: 15),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Flexible(
                               child: RichText(
