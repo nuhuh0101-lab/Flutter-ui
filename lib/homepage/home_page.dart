@@ -1,3 +1,4 @@
+import 'package:final_year_project/complaint%20page/complaint_page.dart';
 import 'package:final_year_project/homepage/ai_smart_analysis_card.dart';
 import 'package:final_year_project/homepage/overview_widget.dart';
 import 'package:final_year_project/homepage/recent_complaint_widget.dart';
@@ -23,7 +24,7 @@ class _HomePageState extends State<HomePage> {
         shadowColor: Colors.grey.shade100,
         title: Text(
           "CitySolve",
-          style: TextStyle(color: Colors.blue),
+          style: TextStyle(color: Colors.blue.shade700),
           ),
         actions: [
           IconButton(
@@ -42,7 +43,9 @@ class _HomePageState extends State<HomePage> {
       ),
 
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ComplaintPage()));
+        },
         elevation: 1,
         icon: Icon(Icons.add),
         label: Text(
