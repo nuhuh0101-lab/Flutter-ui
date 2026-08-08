@@ -1,8 +1,7 @@
 import 'package:final_year_project/register_page.dart';
+import 'package:final_year_project/widgets/custom_textfield.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-import 'custom_textfield.dart';
 
 class LoginPage extends StatefulWidget{
   const LoginPage({super.key});

@@ -1,7 +1,7 @@
 
-import 'package:final_year_project/custom_dropdown.dart';
-import 'package:final_year_project/custom_textfield.dart';
+import 'package:final_year_project/widgets/custom_dropdown.dart';
 import 'package:final_year_project/login_page.dart';
+import 'package:final_year_project/widgets/custom_textfield.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 

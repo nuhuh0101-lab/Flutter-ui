@@ -1,6 +1,4 @@
-import 'package:final_year_project/login_page.dart';
-import 'package:final_year_project/register_page.dart';
-import 'package:final_year_project/splash_screen.dart';
+import 'package:final_year_project/homepage/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: HomePage(),
     );
   }
 }
