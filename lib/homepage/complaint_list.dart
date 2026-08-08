@@ -22,14 +22,21 @@ class ComplaintsList extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           icon,
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                complaint
-              ),
-              Text(id)
-            ],
+          SizedBox(width: 30,),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  maxLines: 2,
+                  complaint,
+                  style: TextStyle(
+                    fontSize: 15
+                  ),
+                ),
+                Text("ID: $id")
+              ],
+            ),
           ),
           StatusBadge(status: status)
         ],
