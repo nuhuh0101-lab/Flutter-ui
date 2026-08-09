@@ -1,5 +1,5 @@
 import 'package:final_year_project/complaint%20page/complaint_page.dart';
-import 'package:final_year_project/homepage/home_page.dart';
+import 'package:final_year_project/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }

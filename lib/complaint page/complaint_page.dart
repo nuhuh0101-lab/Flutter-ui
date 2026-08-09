@@ -1,6 +1,7 @@
 import 'package:final_year_project/complaint%20page/image_upload.dart';
 import 'package:final_year_project/complaint%20page/select_location.dart';
 import 'package:final_year_project/widgets/custom_textfield.dart';
+import 'package:final_year_project/widgets/typical_text.dart';
 import 'package:flutter/material.dart';
 
 class ComplaintPage extends StatelessWidget{
@@ -40,68 +41,37 @@ class ComplaintPage extends StatelessWidget{
                 ),
                 ),
 
+              SizedBox(height: 5,),
+
+              Text(
+                "Provide details about the infrastructure issue you've encountered",
+                style: TextStyle(
+                fontSize: 15
+                ),),
+
+                SizedBox(height: 10,),
+
+                IssueCard(),
+
+                SizedBox(height: 10,),
+
+                ImageUpload(),
+
+                SizedBox(height: 15,),
+
+                TypicalText(text: "Location"),
+
                 SizedBox(height: 5,),
 
-                Text(
-                  "Provide details about the infrastructure issue you've encountered",
-                  style: TextStyle(
-                  fontSize: 15
-                  ),),
+                SelectLocation(),
 
-                  SizedBox(height: 10,),
+                SizedBox(height: 10,),
 
-                  Text(
-                    "Issue Title",
-                    style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16
-                    ),),
+                InfoText(),
 
-                  SizedBox(height: 5,),
+                SizedBox(height: 25,),
 
-                  CustomTextField(
-                    text: "e.g., Broken Streetlight", 
-                    obscureText: false, 
-                    numberKeyboard: false
-                    ),
-
-                  SizedBox(height: 10,),
-                  
-                  Text(
-                    "Description",
-                    style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16
-                    ),),
-
-                    SizedBox(height: 5,),
-
-                    DescriptionField(),
-
-                    SizedBox(height: 10,),
-
-                    ImageUpload(),
-
-                    SizedBox(height: 15,),
-
-                    Text(
-                    "Location",
-                    style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16
-                    ),),
-
-                    SizedBox(height: 5,),
-
-                    SelectLocation(),
-
-                     SizedBox(height: 10,),
-
-                     InfoText(),
-
-                     SizedBox(height: 25,),
-
-                     SubmitButton()
+                SubmitButton()
             ],
           ),
         ),
@@ -109,7 +79,59 @@ class ComplaintPage extends StatelessWidget{
     );
   }
 }
+class IssueCard extends StatelessWidget {
+  const IssueCard({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TypicalText(text: "Complaint Title"),
+        
+                  SizedBox(height: 5,),
+        
+                  CustomTextField(
+                    text: "e.g., Broken Streetlight", 
+                    obscureText: false, 
+                    numberKeyboard: false
+                    ),
+        
+                  SizedBox(height: 10,),
+                  
+                  TypicalText(text: "Description"),
+        
+                  SizedBox(height: 5,),
+        
+                  DescriptionField(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ImageCard extends StatelessWidget {
+  const ImageCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ImageUpload(),
+          ],
+        ),
+      ),
+    );
+  }
+}
 class SubmitButton extends StatelessWidget {
   const SubmitButton({
     super.key,
@@ -194,28 +216,32 @@ class DescriptionField extends StatefulWidget {
 class _DescriptionFieldState extends State<DescriptionField> {
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      minLines: 5,
-      maxLines: 10,
-      keyboardType: TextInputType.multiline,
-      decoration: InputDecoration(
-        hintText: "Describe the Problem in Detail...",
-        filled: true,
-        fillColor: const Color.fromARGB(115, 243, 242, 242),
-        enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(5)),
-        borderSide: BorderSide(
-          width: 1,
-          color: const Color.fromARGB(115, 158, 158, 158),
+    return SizedBox(
+      height: 150,
+      child: TextFormField(
+        maxLines: null,
+        expands: true,
+        textAlignVertical: TextAlignVertical.top,
+        keyboardType: TextInputType.multiline,
+        decoration: InputDecoration(
+          hintText: "Describe the Problem in Detail...",
+          filled: true,
+          fillColor: const Color.fromARGB(115, 243, 242, 242),
+          enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+          borderSide: BorderSide(
+            width: 1,
+            color: const Color.fromARGB(115, 158, 158, 158),
+          ),
         ),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.all(Radius.circular(5)),
-        borderSide: BorderSide(
-          width: 1,
-          color: const Color.fromARGB(115, 158, 158, 158),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+          borderSide: BorderSide(
+            width: 1,
+            color: const Color.fromARGB(115, 158, 158, 158),
+          ),
         ),
-      ),
+        ),
       ),
     );
   }

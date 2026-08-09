@@ -2,6 +2,7 @@
 import 'package:final_year_project/widgets/custom_dropdown.dart';
 import 'package:final_year_project/login_page.dart';
 import 'package:final_year_project/widgets/custom_textfield.dart';
+import 'package:final_year_project/widgets/typical_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -47,36 +48,17 @@ class _RegisterPageState extends State<RegisterPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Create an Account",
-                      style: TextStyle(
-                        fontSize: fontSize,
-                        fontWeight: FontWeight.w400
-                        ),),
-                      SizedBox(height: 10,),
-                      Text(
-                        "Join the smart city initiative today.",
-                        style: TextStyle(
-                          fontSize: fontSize,
-                          fontWeight: FontWeight.w300
-                        ),),
-                        SizedBox(height: 15,),
-                        Text(
-                          "Full Name",
-                          style: TextStyle(
-                            fontSize: fontSize,
-                            fontWeight: FontWeight.bold
-                          ),),
+                    RegisterCardTitle(fontSize: fontSize),
+                      
+
+                        TypicalText(text: "Full Name"),
+
                           SizedBox(height: 5,),
             
                           CustomTextField(text: "John Doe", obscureText: false, numberKeyboard: false,),
                           
                           SizedBox(height: 10,),
-                          Text("Email Address",
-                          style: TextStyle(
-                            fontSize: fontSize,
-                            fontWeight: FontWeight.bold
-                          ),),
+                          TypicalText(text: "Email Address"),
             
                           SizedBox(height: 5,),
             
@@ -84,11 +66,7 @@ class _RegisterPageState extends State<RegisterPage> {
             
                           SizedBox(height: 10,),
             
-                          Text("Mobile Number",
-                          style: TextStyle(
-                            fontSize: fontSize,
-                            fontWeight: FontWeight.bold
-                          ),),
+                          TypicalText(text: "Mobile Number"),
             
                           SizedBox(height: 5,),
             
@@ -96,11 +74,7 @@ class _RegisterPageState extends State<RegisterPage> {
             
                           SizedBox(height: 10,),
             
-                          Text("Municipality",
-                          style: TextStyle(
-                            fontSize: fontSize,
-                            fontWeight: FontWeight.bold
-                          ),),
+                          TypicalText(text: "Municipality"),
             
                           SizedBox(height: 10,),
             
@@ -108,11 +82,7 @@ class _RegisterPageState extends State<RegisterPage> {
             
                           SizedBox(height: 10,),
             
-                          Text("Address(Optional)",
-                          style: TextStyle(
-                            fontSize: fontSize,
-                            fontWeight: FontWeight.bold
-                          ),),
+                          TypicalText(text: "Address(Optional)"),
             
                           SizedBox(height: 5,),
             
@@ -120,50 +90,14 @@ class _RegisterPageState extends State<RegisterPage> {
          
                           SizedBox(height: 10,),
          
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Password",
-                                      style: TextStyle(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.bold
-                                      ),),
-                                    SizedBox(height: 5,),
-                                    CustomTextField(text: "•••••", obscureText: true, numberKeyboard: false)
-                                  ],
-                                ),
-                              ),
-         
-                              SizedBox(width: 20,),
-         
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Comfirm Password",
-                                        style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold
-                                        ),),
-                                    SizedBox(height: 5,),
-                                    CustomTextField(text: "•••••", obscureText: true, numberKeyboard: false)
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
+                          RegisterCardPassword(),
          
                           SizedBox(height: 10,),
          
                           Row(
                             children: [
                               Checkbox(
-                                // 2. Assign the current state
-                                value: _isChecked, 
-                                // 3. Handle state updates
+                                value: _isChecked,
                                 onChanged: (bool? newValue) { 
                                   setState(() {
                                     _isChecked = newValue ?? false;
@@ -217,112 +151,20 @@ class _RegisterPageState extends State<RegisterPage> {
                             ],
                               ),
              SizedBox(height: 10,),
-             ElevatedButton(
-         onPressed: (){
-         
-             }, 
-             style: ElevatedButton.styleFrom(
-          elevation: 0,
-          foregroundColor: Colors.white,
-          backgroundColor: Colors.blue,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))
-             ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Create Account"),
-              Icon(Icons.arrow_forward)
-              ],
-            )
-          ),
+
+             CreateAccountButton(),
           
           SizedBox(height: 10,),
          
-          Row(
-           children: [
-             const Expanded(
-          child: Divider(
-            thickness: 1,
-            color: Colors.grey,
-          ),
-             ),
-             Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Text(
-            "OR",
-            style: TextStyle(
-              color: Colors.grey,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-             ),
-             const Expanded(
-          child: Divider(
-            thickness: 1,
-            color: Colors.grey,
-            ),
-          ),
-             ],
-           ),
+          DividerWidget(),
          
            SizedBox(height: 10,),
          
-           ElevatedButton(
-         onPressed: (){
-         
-             }, 
-             style: ElevatedButton.styleFrom(
-          elevation: 0,
-          side: BorderSide(color: Color.fromARGB(115, 158, 158, 158)),
-          foregroundColor: Colors.black,
-          backgroundColor: Colors.white,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))
-             ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Sign up with Google"),
-              
-              ],
-            )
-          ),
+           GoogleSignUpButton(),
           
           SizedBox(height: 15,),
          
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              RichText(
-                  text: TextSpan(
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                    ),
-                    children: [
-                      const TextSpan(
-                        text: "Already have an account? ",
-                      ),
-                      TextSpan(
-                        text: "Sign In",
-                        style: const TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                              Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const LoginPage(),
-                                    ),
-                                  );
-                          },
-                      ),
-                    ],
-                  ),
-                ),
-            ],
-          )
+          LoginPageNavigator()
          
                   ],
                 ),
@@ -332,5 +174,220 @@ class _RegisterPageState extends State<RegisterPage> {
          ),
        ),
      );
+  }
+}
+
+class LoginPageNavigator extends StatelessWidget {
+  const LoginPageNavigator({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        RichText(
+            text: TextSpan(
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 14,
+              ),
+              children: [
+                const TextSpan(
+                  text: "Already have an account? ",
+                ),
+                TextSpan(
+                  text: "Sign In",
+                  style: const TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                        Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LoginPage(),
+                              ),
+                            );
+                    },
+                ),
+              ],
+            ),
+          ),
+      ],
+    );
+  }
+}
+
+class GoogleSignUpButton extends StatelessWidget {
+  const GoogleSignUpButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+             onPressed: (){
+             
+      }, 
+      style: ElevatedButton.styleFrom(
+              elevation: 0,
+              side: BorderSide(color: Color.fromARGB(115, 158, 158, 158)),
+              foregroundColor: Colors.black,
+              backgroundColor: Colors.white,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))
+      ),
+              child: Row(
+     mainAxisAlignment: MainAxisAlignment.center,
+     children: [
+       Text("Sign up with Google"),
+       
+       ],
+     )
+              );
+  }
+}
+
+class DividerWidget extends StatelessWidget {
+  const DividerWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+     children: [
+       const Expanded(
+    child: Divider(
+      thickness: 1,
+      color: Colors.grey,
+    ),
+       ),
+       Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 10),
+    child: Text(
+      "OR",
+      style: TextStyle(
+        color: Colors.grey,
+        fontWeight: FontWeight.w500,
+      ),
+    ),
+       ),
+       const Expanded(
+    child: Divider(
+      thickness: 1,
+      color: Colors.grey,
+      ),
+    ),
+       ],
+     );
+  }
+}
+
+class CreateAccountButton extends StatelessWidget {
+  const CreateAccountButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+             onPressed: (){
+             
+    }, 
+    style: ElevatedButton.styleFrom(
+              elevation: 0,
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.blue,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))
+    ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+     Text("Create Account"),
+     Icon(Icons.arrow_forward)
+     ],
+                )
+              );
+  }
+}
+
+class RegisterCardPassword extends StatelessWidget {
+  const RegisterCardPassword({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Password",
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold
+                ),),
+              SizedBox(height: 5,),
+              CustomTextField(text: "•••••", obscureText: true, numberKeyboard: false)
+            ],
+          ),
+        ),
+             
+        SizedBox(width: 20,),
+             
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Comfirm Password",
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold
+                  ),),
+              SizedBox(height: 5,),
+              CustomTextField(text: "•••••", obscureText: true, numberKeyboard: false)
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class RegisterCardTitle extends StatelessWidget {
+  const RegisterCardTitle({
+    super.key,
+    required this.fontSize,
+  });
+
+  final double fontSize;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Create an Account",
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w400
+            ),),
+            SizedBox(height: 10,),
+      Text(
+        "Join the smart city initiative today.",
+        style: TextStyle(
+          fontSize: fontSize,
+          fontWeight: FontWeight.w300
+        ),),
+    
+        SizedBox(height: 15,),
+      ],
+    );
   }
 }
