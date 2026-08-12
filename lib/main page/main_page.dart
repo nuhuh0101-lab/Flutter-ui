@@ -59,7 +59,8 @@ class _MainPageState extends State<MainPage> {
           
       ),
 
-      floatingActionButton: FloatingActionButton.extended(
+      floatingActionButton: selectedIndex == 0 
+      ? FloatingActionButton.extended(
         onPressed: (){
           Navigator.push(context, MaterialPageRoute(builder: (context) => NewComplaintPage()));
         },
@@ -73,7 +74,8 @@ class _MainPageState extends State<MainPage> {
         ),
         backgroundColor: Colors.blue.shade500,
         foregroundColor: Colors.white,
-        ),
+        )
+        : null,
         
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
