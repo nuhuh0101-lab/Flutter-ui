@@ -1,4 +1,6 @@
 import 'package:final_year_project/complaint%20detail%20page/complaint_detail_page.dart';
+import 'package:final_year_project/homepage/home_page.dart';
+import 'package:final_year_project/main%20page/main_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ComplaintDetailPage(),
+      home: MainPage(),
     );
   }
 }

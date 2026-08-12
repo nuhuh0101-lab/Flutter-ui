@@ -1,4 +1,4 @@
-import 'package:final_year_project/complaint%20page/complaint_page.dart';
+import 'package:final_year_project/new%20complaint%20page/new_complaint_page.dart';
 import 'package:final_year_project/homepage/ai_smart_analysis_card.dart';
 import 'package:final_year_project/homepage/overview_widget.dart';
 import 'package:final_year_project/homepage/recent_complaint_widget.dart';
@@ -16,85 +16,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context){
     
-    return Scaffold(
-      drawer: Drawer(),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 1,
-        shadowColor: Colors.grey.shade100,
-        title: Text(
-          "CitySolve",
-          style: TextStyle(color: Colors.blue.shade700),
-          ),
-        actions: [
-          IconButton(
-            onPressed: (){}, 
-            icon: Icon(Icons.notifications)),
-          
-          CircleAvatar(
-            radius: 18,
-            backgroundColor: Colors.white,
-            child: Icon(Icons.person),
-            
-          ),
-          SizedBox(width: 15,)
-        ],
-          
-      ),
-
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => ComplaintPage()));
-        },
-        elevation: 1,
-        icon: Icon(Icons.add),
-        label: Text(
-          "New Complaint",
-          style: TextStyle(
-            fontSize: 15
-          ),
-        ),
-        backgroundColor: Colors.blue.shade500,
-        foregroundColor: Colors.white,
-        ),
-        
-        bottomNavigationBar: NavigationBar(
-           height: 65,
-           backgroundColor: Colors.white,
-           elevation: 3,
-           indicatorColor: Colors.transparent,
-
-        selectedIndex: selectedIndex,
-        onDestinationSelected: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
-        },
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.home_outlined),
-            selectedIcon: Icon(Icons.home),
-            label: "Home",
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.receipt_long_outlined),
-            selectedIcon: Icon(Icons.receipt_long),
-            label: "Complaints",
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.analytics_outlined),
-            selectedIcon: Icon(Icons.analytics),
-            label: "Analysis",
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.person_outline),
-            selectedIcon: Icon(Icons.person),
-            label: "Profile",
-          ),
-        ],
-      ),
-
-      body: SafeArea(
+    return SafeArea(
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
@@ -154,8 +76,8 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         )
-      ),
-    );
+      );
+    
   }
 }
 

@@ -1,11 +1,11 @@
-import 'package:final_year_project/complaint%20page/image_upload.dart';
-import 'package:final_year_project/complaint%20page/select_location.dart';
+import 'package:final_year_project/new%20complaint%20page/image_upload.dart';
+import 'package:final_year_project/new%20complaint%20page/select_location.dart';
 import 'package:final_year_project/widgets/custom_textfield.dart';
 import 'package:final_year_project/widgets/typical_text.dart';
 import 'package:flutter/material.dart';
 
-class ComplaintPage extends StatelessWidget{
-  const ComplaintPage({super.key});
+class NewComplaintPage extends StatelessWidget{
+  const NewComplaintPage({super.key});
   @override
   Widget build(BuildContext context){
     return Scaffold(

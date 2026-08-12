@@ -255,70 +255,70 @@ class ComplaintDetailPage extends StatelessWidget {
       ),
 
        bottomNavigationBar: SafeArea(
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border(
-                                    top: BorderSide(
-                                      color: Colors.grey.shade300,
-                                    ),
-                                  ),
-                                ),
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      child: OutlinedButton.icon(
-                                        onPressed: () {
-                                          
-                                        },
-                                        icon: Icon(
-                                          Icons.share,
-                                          color: Colors.blue),
-                                        label: Text(
-                                          "Share",
-                                          style: TextStyle(
-                                            color: Colors.blue
-                                          ),),
-                                        style: OutlinedButton.styleFrom(
-                                          minimumSize: const Size(double.infinity, 48),
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(10),                                            
-                                          ),
-                                          side: BorderSide(
-                                            width: 1.3,
-                                            color: Colors.blue.shade600
-                                          )
-                                        ),
-                                      ),
-                                    ),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border(
+                top: BorderSide(
+                  color: Colors.grey.shade300,
+                ),
+              ),
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton.icon(
+                    onPressed: () {
+                      
+                    },
+                    icon: Icon(
+                      Icons.share,
+                      color: Colors.blue),
+                    label: Text(
+                      "Share",
+                      style: TextStyle(
+                        color: Colors.blue
+                      ),),
+                    style: OutlinedButton.styleFrom(
+                      minimumSize: const Size(double.infinity, 48),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),                                            
+                      ),
+                      side: BorderSide(
+                        width: 1.3,
+                        color: Colors.blue.shade600
+                      )
+                    ),
+                  ),
+                ),
 
-                                    SizedBox(width: 16),
+                SizedBox(width: 16),
 
-                                    Expanded(
-                                      child: ElevatedButton(
-                                        onPressed: () {
-                                          
-                                        },
-                                        style: ElevatedButton.styleFrom(
-                                          backgroundColor: Colors.blue,
-                                          minimumSize: const Size(double.infinity, 48),
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(10),
-                                          ),
-                                        ),
-                                        child: Text(
-                                          "Leave Feedback",
-                                        style: TextStyle(
-                                            color: Colors.white
-                                          ),),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          );
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      minimumSize: const Size(double.infinity, 48),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: Text(
+                      "Leave Feedback",
+                    style: TextStyle(
+                        color: Colors.white
+                      ),),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
     
   }
 }
