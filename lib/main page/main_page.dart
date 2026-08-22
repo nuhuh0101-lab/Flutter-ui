@@ -14,7 +14,6 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int selectedIndex = 0;
-
   final List<Widget> pages = [
     HomePage(),
     ComplaintsPage(),
@@ -24,6 +23,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: IndexedStack(
         index: selectedIndex,
         children: pages,
@@ -60,21 +60,7 @@ class _MainPageState extends State<MainPage> {
       ),
 
       floatingActionButton: selectedIndex == 0 
-      ? FloatingActionButton.extended(
-        onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => NewComplaintPage()));
-        },
-        elevation: 1,
-        icon: Icon(Icons.add),
-        label: Text(
-          "New Complaint",
-          style: TextStyle(
-            fontSize: 15
-          ),
-        ),
-        backgroundColor: Colors.blue.shade500,
-        foregroundColor: Colors.white,
-        )
+      ? NewComplaintButton()
         : null,
         
         bottomNavigationBar: Container(
@@ -125,6 +111,31 @@ class _MainPageState extends State<MainPage> {
         );
 
       
+  }
+}
+
+class NewComplaintButton extends StatelessWidget {
+  const NewComplaintButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton.extended(
+      onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context) => NewComplaintPage()));
+      },
+      elevation: 1,
+      icon: Icon(Icons.add),
+      label: Text(
+        "New Complaint",
+        style: TextStyle(
+          fontSize: 15
+        ),
+      ),
+      backgroundColor: Colors.blue.shade500,
+      foregroundColor: Colors.white,
+      );
   }
 }
 

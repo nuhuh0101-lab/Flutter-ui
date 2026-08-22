@@ -21,6 +21,19 @@ class _CustomDropdownState extends State<CustomDropdown> {
       initialValue: selectedValue,
       isExpanded: true,
       menuMaxHeight: 200,
+      items: widget.dropdownItems.map((String item) {
+        return DropdownMenuItem<String>(
+          value: item,
+          child: Text(item),
+        );
+      }).toList(),
+
+      onChanged: (value) {
+        setState(() {
+          selectedValue = value;
+        });
+      },
+      
       decoration: InputDecoration(
         hintText: "Select",
         filled: true,
@@ -46,19 +59,6 @@ class _CustomDropdownState extends State<CustomDropdown> {
           vertical: 18,
         ),
       ),
-
-      items: widget.dropdownItems.map((String item) {
-        return DropdownMenuItem<String>(
-          value: item,
-          child: Text(item),
-        );
-      }).toList(),
-
-      onChanged: (value) {
-        setState(() {
-          selectedValue = value;
-        });
-      },
     );
   }
 }

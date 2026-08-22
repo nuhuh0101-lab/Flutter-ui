@@ -1,3 +1,4 @@
+import 'package:final_year_project/complaint%20detail%20page/complaint_detail_page.dart';
 import 'package:final_year_project/widgets/status_badge.dart';
 import 'package:flutter/material.dart';
 
@@ -74,7 +75,7 @@ class ComplaintOverview extends StatelessWidget {
                   Spacer(),
                   TextButton.icon(
                     onPressed: (){
-
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => ComplaintDetailPage()));
                     }, 
                     label: Text("View Details"),
                     iconAlignment: IconAlignment.end,

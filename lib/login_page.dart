@@ -1,4 +1,5 @@
 import 'package:final_year_project/homepage/home_page.dart';
+import 'package:final_year_project/main%20page/main_page.dart';
 import 'package:final_year_project/register_page.dart';
 import 'package:final_year_project/widgets/custom_textfield.dart';
 import 'package:final_year_project/widgets/typical_text.dart';
@@ -237,7 +238,7 @@ class LoginButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: (){
         Navigator.pushReplacement(context, MaterialPageRoute(
-        builder: (context) => const HomePage()
+        builder: (context) => const MainPage()
         ));
       }, 
       style: ElevatedButton.styleFrom(

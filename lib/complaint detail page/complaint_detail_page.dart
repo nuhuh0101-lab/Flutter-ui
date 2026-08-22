@@ -15,7 +15,7 @@ class ComplaintDetailPage extends StatelessWidget {
         shadowColor: Colors.grey.shade100,
         leading: IconButton(
           onPressed:() {
-            //Navigator.pop(context);
+            Navigator.pop(context);
           },
         icon : Icon(Icons.arrow_back)),
         title: Text(
